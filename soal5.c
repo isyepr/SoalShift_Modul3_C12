@@ -36,5 +36,18 @@ void* count_Ifah(void *arg){
 		}
 	status=1;
 	fclose(fp);
-	printf("IFAH=%d<n", countifah);
+	printf("IFAH=%d\n", countifah);
 	}
+void* count_Fina(void *arg){
+	while(status != 1){
+	fq = fopen ("/home/ilham/modul3/Novel.txt", "r");
+	char cari[5]="Fina";
+
+	int countfina=0;
+	while(fgets(kata2,2000,fq)!=NULL){
+		countfina+=hitung(kata2,cari);
+		}
+	fclose(fq);
+	printf("Fina=%d\n", countfina);
+	}
+}
