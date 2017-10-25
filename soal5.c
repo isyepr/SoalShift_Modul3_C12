@@ -22,3 +22,19 @@ int hitung(char* String, char *str){
 			}
 		}
 		return count;
+	}
+char kata[1000];
+char kata2[1000];
+void* count_Ifah(void *arg){
+	status = 0;
+	fp = fopen("/home/ilham/modul3/Novel.txt", "r");
+	char kata[1000];
+	char cari[5]="Ifah";
+	int countiffah=0;
+	while(fgets(kata,1000,fp)!=NULL){
+		countifah+=hitung(kata,cari);
+		}
+	status=1;
+	fclose(fp);
+	printf("IFAH=%d<n", countifah);
+	}
