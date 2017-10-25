@@ -40,6 +40,8 @@ void* count_Ifah(void *arg){
 	}
 void* count_Fina(void *arg){
 	while(status != 1){
+	
+	}
 	fq = fopen ("/home/ilham/modul3/Novel.txt", "r");
 	char cari[5]="Fina";
 
@@ -49,7 +51,6 @@ void* count_Fina(void *arg){
 		}
 	fclose(fq);
 	printf("Fina=%d\n", countfina);
-	}
 }
 int main(void){
 	pthread_create(&(tid1), NULL, &count_Fina, NULL);
