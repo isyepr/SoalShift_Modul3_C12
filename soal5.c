@@ -14,11 +14,11 @@ int hitung(char* String, char *str){
 	int count=0;
 	char* Temp = String;
 
-	while(Temp != NUll){
+	while(Temp != NULL){
 		Temp=strstr(Temp,str);
 		if(Temp){
 			Temp++;
-			cout++;
+			count++;
 			}
 		}
 		return count;
@@ -30,7 +30,7 @@ void* count_Ifah(void *arg){
 	fp = fopen("/home/ilham/modul3/Novel.txt", "r");
 	char kata[1000];
 	char cari[5]="Ifah";
-	int countiffah=0;
+	int countifah=0;
 	while(fgets(kata,1000,fp)!=NULL){
 		countifah+=hitung(kata,cari);
 		}
@@ -51,3 +51,12 @@ void* count_Fina(void *arg){
 	printf("Fina=%d\n", countfina);
 	}
 }
+int main(void){
+	pthread_create(&(tid1), NULL, &count_Fina, NULL);
+	pthread_create(&(tid2), NULL, &count_Ifah, NULL);
+	
+	pthread_join(tid1, NULL);
+	pthread_join(tid2,NULL);
+	return 0;
+}
+
